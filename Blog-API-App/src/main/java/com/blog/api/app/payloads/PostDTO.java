@@ -1,6 +1,7 @@
 package com.blog.api.app.payloads;
 
 import java.util.Date;
+import java.util.Set;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,4 +25,6 @@ public class PostDTO
 	private CategoryDTO category;
 	
 	private UserDTO user;
+	
+	private Set<CommentDTO> comments;
 }
