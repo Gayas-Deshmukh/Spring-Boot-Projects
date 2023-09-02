@@ -35,4 +35,10 @@ public class GlobalExceptionHandler
 		
 		return new ResponseEntity<Map<String, String>>(errorMsg, HttpStatus.BAD_REQUEST);
 	}
+	
+	@ExceptionHandler(JwtException.class)
+	public ResponseEntity<ApiResponse> handleJwtException(JwtException ex)
+	{
+		return new ResponseEntity<ApiResponse>(new ApiResponse(ex.getMessage(), false), HttpStatus.NOT_FOUND);
+	}
 }
